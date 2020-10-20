@@ -1,55 +1,31 @@
-while True:
-  description = input("How do you feel today? Describe your feelings in one word!")
+print("Title of program: EM Matching Personality test")
+print()
+print("Welcome to DHS! Please answer the following questions truthfully and we'll suggest an EM for you!")
+print("Please respond with a number 1 - 5, where 1 is strongly disagree and 5 is strongly agree.")
+print()
 
-  list_of_words = description.split()
+creativearts1 = input("I am good at English.")
 
-  feelings_list = []
-  encouragement_list = []
-  counter = 0
-  
-  for each_word in list_of_words:
-    
-    if each_word == "sad":
-      feelings_list.append("sad")
-      encouragement_list.append("tomorrow will be a better day")
-      counter += 1
-    if each_word == "happy":
-      feelings_list.append("happy")
-      encouragement_list.append("to keep smiling")
-      counter += 1
-    if each_word == "tired":
-      feelings_list.append("tired")
-      encouragement_list.append("you are stronger than you think")
-      counter += 1
-    if each word == "bored"
-       feelings_list.append("bored")
-       encouragement_list.append("you can try to pick up a new hobby")
-    if each word == "angry"
-       feelings_list.append("angry")
-       encouragement_list.append("you can talk to someone about it")
-                           
-  if counter == 0:
-    
-      output = "Sorry I don't really understand. Please use different words?"
+sportscience1 = input("I have an interest in sports.")
 
-  elif counter == 1:
-    
-      output = "It seems that you are feeling quite " + feelings_list[0] + ". However, do remember that "+ encouragement_list[0] + "! Hope you feel better :)"  
+mootparliament1 = input("I want to learn more about how the government works.")
 
-  else:
+creativearts2 = input("I enjoy writing poems.")
 
-    feelings = ""    
-    for i in range(len(feelings_list)-1):
-      feelings += feelings_list[i] + ", "
-    feelings += "and " + feelings_list[-1]
-    
-    encouragement = ""    
-    for j in range(len(encouragement_list)-1):
-      encouragement += encouragement_list[i] + ", "
-    encouragement += "and " + encouragement_list[-1]
+sportscience2 = input("I am inquisitive when learning about science/doing science experiments.")
 
-    output = "It seems that you are feeling quite " + feelings + ". Please always remember "+ encouragement + "! Hope you feel better :)"
+mootparliament2 = input("I have an interest in debate.")
 
-  print()
-  print(output)
-  print()
+
+creativearts_final = int(creativearts1) + int(creativearts2)
+sportscience_final = int(sportscience1) + int(sportscience2)
+mootparliament_final = int(mootparliament1)+ int(mootparliament2)
+
+print()
+
+if creativearts_final > sportscience_final and creativearts_final > mootparliament_final:
+  print("You might be suitable for Infocomm club!")
+elif sportscience_final > mootparliament_final:
+  print("You might be stuiable for Sport Science!")
+else:
+  print("You might be suitable for Moot Parliament!")
